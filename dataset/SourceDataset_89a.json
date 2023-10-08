@@ -1,0 +1,186 @@
+{
+	"name": "SourceDataset_89a",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_blobtestConnection",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Covid_data.csv",
+				"container": "raw"
+			},
+			"columnDelimiter": ",",
+			"rowDelimiter": "\n",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "location",
+				"type": "String"
+			},
+			{
+				"name": "continent",
+				"type": "String"
+			},
+			{
+				"name": "date",
+				"type": "String"
+			},
+			{
+				"name": "iso_code",
+				"type": "String"
+			},
+			{
+				"name": "tests_units",
+				"type": "String"
+			},
+			{
+				"name": "aged_65_older",
+				"type": "String"
+			},
+			{
+				"name": "aged_70_older",
+				"type": "String"
+			},
+			{
+				"name": "cardiovasc_death_rate",
+				"type": "String"
+			},
+			{
+				"name": "Deathp100K",
+				"type": "String"
+			},
+			{
+				"name": "diabetes_prevalence",
+				"type": "String"
+			},
+			{
+				"name": "extreme_poverty",
+				"type": "String"
+			},
+			{
+				"name": "female_smokers",
+				"type": "String"
+			},
+			{
+				"name": "gdp_per_capita",
+				"type": "String"
+			},
+			{
+				"name": "handwashing_facilities",
+				"type": "String"
+			},
+			{
+				"name": "hospital_beds_per_thousand",
+				"type": "String"
+			},
+			{
+				"name": "life_expectancy",
+				"type": "String"
+			},
+			{
+				"name": "male_smokers",
+				"type": "String"
+			},
+			{
+				"name": "median_age",
+				"type": "String"
+			},
+			{
+				"name": "Mortality Rate",
+				"type": "String"
+			},
+			{
+				"name": "new_cases",
+				"type": "String"
+			},
+			{
+				"name": "new_cases_per_million",
+				"type": "String"
+			},
+			{
+				"name": "new_deaths",
+				"type": "String"
+			},
+			{
+				"name": "new_deaths_per_million",
+				"type": "String"
+			},
+			{
+				"name": "new_tests",
+				"type": "String"
+			},
+			{
+				"name": "new_tests_per_thousand",
+				"type": "String"
+			},
+			{
+				"name": "new_tests_smoothed",
+				"type": "String"
+			},
+			{
+				"name": "new_tests_smoothed_per_thousand",
+				"type": "String"
+			},
+			{
+				"name": "Number of Records",
+				"type": "String"
+			},
+			{
+				"name": "population",
+				"type": "String"
+			},
+			{
+				"name": "population_density",
+				"type": "String"
+			},
+			{
+				"name": "positive_rate",
+				"type": "String"
+			},
+			{
+				"name": "stringency_index",
+				"type": "String"
+			},
+			{
+				"name": "tests_per_case",
+				"type": "String"
+			},
+			{
+				"name": "total_cases",
+				"type": "String"
+			},
+			{
+				"name": "total_cases_per_million",
+				"type": "String"
+			},
+			{
+				"name": "total_deaths",
+				"type": "String"
+			},
+			{
+				"name": "total_deaths_per_million",
+				"type": "String"
+			},
+			{
+				"name": "total_tests",
+				"type": "String"
+			},
+			{
+				"name": "total_tests_per_thousand",
+				"type": "String"
+			},
+			{
+				"name": "Waterfall",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

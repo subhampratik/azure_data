@@ -1,0 +1,13 @@
+{
+	"name": "DS_INPUT_TABLES_001",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DS_SQL_TABLE",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

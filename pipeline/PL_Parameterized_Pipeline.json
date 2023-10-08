@@ -1,0 +1,115 @@
+{
+	"name": "PL_Parameterized_Pipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "Set variable1",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "HttpReadSettings",
+							"requestMethod": "GET"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DS_InputFiles_2",
+						"type": "DatasetReference",
+						"parameters": {
+							"BaseURL": {
+								"value": "@variables('SourceBaseURL')",
+								"type": "Expression"
+							},
+							"RelativeURL": {
+								"value": "@variables('SourceRelativeURL')",
+								"type": "Expression"
+							}
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Ds_OutputFiles_1",
+						"type": "DatasetReference",
+						"parameters": {
+							"SinkFileName": {
+								"value": "@variables('SourceRelativeURL')",
+								"type": "Expression"
+							}
+						}
+					}
+				]
+			},
+			{
+				"name": "Set variable1",
+				"description": "",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "SourceRelativeURL",
+					"value": "subhampratik/azure_data/main/Sample%20-%20Superstore.csv"
+				}
+			}
+		],
+		"variables": {
+			"SourceBaseURL": {
+				"type": "String",
+				"defaultValue": "https://raw.githubusercontent.com/"
+			},
+			"SourceRelativeURL": {
+				"type": "String",
+				"defaultValue": "subhampratik/azure_data/main/Player_match.csv"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2023-10-02T07:09:05Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
