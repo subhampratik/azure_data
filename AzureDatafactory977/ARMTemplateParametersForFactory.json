@@ -1,0 +1,39 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "AzureDatafactory977"
+		},
+		"DS_SQL_TABLE_connectionString": {
+			"value": ""
+		},
+		"LS_ADLSConnection_accountKey": {
+			"value": ""
+		},
+		"LS_ADLS_TestConnection_accountKey": {
+			"value": ""
+		},
+		"LS_BlobConnection_connectionString": {
+			"value": ""
+		},
+		"LS_blobtestConnection_connectionString": {
+			"value": ""
+		},
+		"LS_ADLSConnection_properties_typeProperties_url": {
+			"value": "https://subh1lake.dfs.core.windows.net/"
+		},
+		"LS_ADLS_TestConnection_properties_typeProperties_url": {
+			"value": "https://subh1lake.dfs.core.windows.net/"
+		},
+		"LS_HTTPConnection_properties_typeProperties_url": {
+			"value": "@{linkedService().BaseURL}"
+		},
+		"LS_KeyVault_properties_typeProperties_baseUrl": {
+			"value": "https://adfkeyvaulttest01.vault.azure.net/"
+		},
+		"Event_trigger_properties_typeProperties_scope": {
+			"value": "/subscriptions/a8aa638c-f75a-4e81-822b-758dfbb85417/resourceGroups/TestRg/providers/Microsoft.Storage/storageAccounts/subham977"
+		}
+	}
+}
